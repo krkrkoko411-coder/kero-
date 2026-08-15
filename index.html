@@ -111,6 +111,15 @@ Ready to Study 🚀</title>
         <a href="profile.html">👤 الملف الشخصي</a>
     </nav>
 <script src="script.js"></script>
+        <script>
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./sw.js")
+            .then(() => console.log("StudyMate Service Worker registered"))
+            .catch(error => console.error("Service Worker error:", error));
+    });
+}
+</script>
 </body>
 </html>
 </body>
