@@ -1,0 +1,11 @@
+{
+  "name": "StudyMate - Ready to Study",
+  "short_name": "StudyMate",
+  "description": "صاحبك في المذاكرة وتنظيم الدراسة",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#111827",
+  "theme_color": "#111827",
+  "orientation": "portrait-primary",
+  "icons": []
+}
