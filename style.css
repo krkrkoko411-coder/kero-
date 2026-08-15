@@ -85,6 +85,11 @@ body .sidebar a:nth-of-type(9){animation:sidebarLink .34s .36s both}
 body .sidebar a:nth-of-type(10){animation:sidebarLink .34s .4s both}
 
 #sidebarToggle{font-size:0;overflow:hidden}
+.logo {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
 #sidebarToggle::before{content:"☰";font:700 1.3rem/1 Arial,sans-serif}
 @media (min-width:681px){
     body:not(.sidebar-collapsed) #sidebarToggle{background:linear-gradient(135deg,#835ff0,#be72ed);box-shadow:0 12px 28px rgba(153,96,239,.46)}
