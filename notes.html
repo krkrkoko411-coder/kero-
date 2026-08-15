@@ -1,0 +1,54 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <title>notes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="notes">
+
+    <h1>📝 ملاحظاتي</h1>
+
+    <div class="add-note">
+
+        <input
+            type="text"
+            id="noteTitle"
+            placeholder="عنوان الملاحظة"
+        >
+
+        <textarea
+            id="noteContent"
+            placeholder="اكتب ملاحظتك هنا..."
+        ></textarea>
+
+        <button id="saveNoteButton">
+            💾 حفظ الملاحظة
+        </button>
+
+    </div>
+
+    <div class="notes-list" id="notesList">
+        <div class="empty-state">
+            <p>مفيش ملاحظات لسه</p>
+        </div>
+    </div>
+
+</section>
+<nav class="sidebar" aria-label="التنقل الرئيسي">
+        <h2>StudyMate</h2>
+     
+     <a href="index.html">🏠 الرئيسية</a>
+        <a href="pomodoro.html">⏱️ Pomodoro</a>
+        <a href="subjects.html">📚 المواد</a>
+        <a href="planner.html">📅 Planner</a>
+        <a href="daily-planner.html" aria-current="page">🗓️ جدول اليوم</a>
+        <a href="lessons.html">📖 دروس اليوم</a>
+        <a href="goals.html">🎯 الأهداف الأسبوعية</a>
+        <a href="notes.html">📝 الملاحظات</a>
+        <a href="exams.html">📝 الامتحانات</a>
+        <a href="profile.html">👤 الملف الشخصي</a>
+    </nav>
+<script src="script.js"></script>
+</body>
+</html>

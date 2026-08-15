@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>profile</title> 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section class="profile">
+<nav class="sidebar" aria-label="التنقل الرئيسي">
+        <h2>StudyMate</h2>
+     
+     <a href="index.html">🏠 الرئيسية</a>
+        <a href="pomodoro.html">⏱️ Pomodoro</a>
+        <a href="subjects.html">📚 المواد</a>
+        <a href="planner.html">📅 Planner</a>
+        <a href="daily-planner.html" aria-current="page">🗓️ جدول اليوم</a>
+        <a href="lessons.html">📖 دروس اليوم</a>
+        <a href="goals.html">🎯 الأهداف الأسبوعية</a>
+        <a href="notes.html">📝 الملاحظات</a>
+        <a href="exams.html">📝 الامتحانات</a>
+        <a href="profile.html">👤 الملف الشخصي</a>
+    </nav>
+    <h1>👤 الملف الشخصي</h1>
+
+    <div class="profile-info">
+
+        <h2 id="userName">طالب</h2>
+
+        <p>
+            إجمالي الدروس المكتملة:
+            <span id="totalCompleted">0</span>
+        </p>
+
+        <p>
+            إجمالي جلسات المذاكرة:
+            <span id="totalSessions">0</span>
+        </p>
+
+        <p>
+            نسبة التقدم:
+            <span id="totalProgress">0%</span>
+        </p>
+
+    </div>
+
+    <div class="edit-profile" id="editProfileForm" style="display:none;">
+        <input type="text" id="newUserName" placeholder="الاسم الجديد">
+        <button id="saveProfileButton">💾 حفظ</button>
+        <button id="cancelProfileButton">إلغاء</button>
+    </div>
+
+    <button id="editProfileButton">
+        ✏️ تعديل البيانات
+    </button>
+
+</section>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دروس اليوم - KiroHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<nav class="sidebar" aria-label="التنقل الرئيسي">
+        <h2>StudyMate</h2>
+     
+     <a href="index.html">🏠 الرئيسية</a>
+        <a href="pomodoro.html">⏱️ Pomodoro</a>
+        <a href="subjects.html">📚 المواد</a>
+        <a href="planner.html">📅 Planner</a>
+        <a href="daily-planner.html" aria-current="page">🗓️ جدول اليوم</a>
+        <a href="lessons.html">📖 دروس اليوم</a>
+        <a href="goals.html">🎯 الأهداف الأسبوعية</a>
+        <a href="notes.html">📝 الملاحظات</a>
+        <a href="exams.html">📝 الامتحانات</a>
+        <a href="profile.html">👤 الملف الشخصي</a>
+    </nav>
+<section class="weekly-lesson-section" id="weeklyLessonSection">
+
+    <div class="weekly-lesson-card">
+
+        <div class="weekly-lesson-title">
+            <span class="lesson-icon">📚</span>
+            <div>
+                <h2>إضافة درس أسبوعي</h2>
+                <p>أضف درسًا ليظهر تلقائيًا في موعده كل أسبوع</p>
+            </div>
+        </div>
+
+        <form id="weeklyLessonForm">
+            <!-- اسم الدرس -->
+            <div class="lesson-field">
+                <label for="weeklyLessonTitle">اسم الدرس</label>
+                <input type="text" id="weeklyLessonTitle" name="weeklyLessonTitle"
+                       placeholder="مثال: قوانين نيوتن" required>
+            </div>
+
+            <!-- المادة -->
+            <div class="lesson-field">
+                <label for="weeklyLessonSubject">المادة</label>
+
+                <select id="weeklyLessonSubject" required>
+                    <option value="">اختر المادة</option>
+                </select>
+            </div>
+
+
+            <!-- اليوم والوقت -->
+            <div class="lesson-row">
+
+                <div class="lesson-field">
+                    <label for="weeklyLessonDay">يوم الدرس</label>
+
+                    <select id="weeklyLessonDay" required>
+                        <option value="">اختر اليوم</option>
+                        <option value="6">السبت</option>
+                        <option value="0">الأحد</option>
+                        <option value="1">الاثنين</option>
+                        <option value="2">الثلاثاء</option>
+                        <option value="3">الأربعاء</option>
+                        <option value="4">الخميس</option>
+                        <option value="5">الجمعة</option>
+                    </select>
+                </div>
+
+
+                <div class="lesson-field">
+                    <label for="weeklyLessonTime">وقت الدرس</label>
+
+                    <input
+                        type="time"
+                        id="weeklyLessonTime"
+                        required
+                    >
+                </div>
+
+            </div>
+
+
+            <!-- مدة الدرس -->
+            <div class="lesson-field">
+                <label for="weeklyLessonDuration">مدة الدرس</label>
+
+                <select id="weeklyLessonDuration">
+                    <option value="30">30 دقيقة</option>
+                    <option value="45">45 دقيقة</option>
+                    <option value="60" selected>ساعة</option>
+                    <option value="90">ساعة ونصف</option>
+                    <option value="120">ساعتان</option>
+                </select>
+            </div>
+
+
+            <!-- وصف -->
+            <div class="lesson-field">
+                <label for="weeklyLessonDescription">وصف الدرس</label>
+
+                <textarea
+                    id="weeklyLessonDescription"
+                    rows="3"
+                    placeholder="اكتب وصفًا مختصرًا للدرس..."
+                ></textarea>
+            </div>
+
+
+            <!-- محتوى -->
+            <div class="lesson-field">
+                <label for="weeklyLessonContent">محتوى الدرس</label>
+
+                <textarea
+                    id="weeklyLessonContent"
+                    rows="6"
+                    placeholder="اكتب محتوى الدرس أو الملاحظات المهمة هنا..."
+                ></textarea>
+            </div>
+
+
+            <!-- التكرار -->
+            <div class="weekly-repeat-box">
+
+                <label class="weekly-repeat-label">
+
+                    <input
+                        type="checkbox"
+                        id="weeklyLessonRepeat"
+                        checked
+                    >
+
+                    <span>
+                        <strong>تكرار أسبوعي</strong>
+                        <small>يظهر الدرس تلقائيًا في نفس اليوم والوقت كل أسبوع</small>
+                    </span>
+
+                </label>
+
+            </div>
+
+
+            <!-- أزرار -->
+            <div class="weekly-lesson-actions">
+
+                <button
+                    type="submit"
+                    id="saveWeeklyLessonBtn"
+                    class="save-weekly-lesson"
+                >
+                    ➕ إضافة الدرس
+                </button>
+
+                <button
+                    type="reset"
+                    id="resetWeeklyLessonBtn"
+                    class="reset-weekly-lesson"
+                >
+                    إعادة ضبط
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+    <section class="today-lessons" id="todayLessons" aria-live="polite"></section>
+
+    <section class="weekly-schedule" id="weeklySchedule">
+        <h2>📅 جدول الدروس الأسبوعي</h2>
+    </section>
+
+</section>
+<script src="script.js"></script>
+</body> 

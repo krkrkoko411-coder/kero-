@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="style.css">    
+</head>
+<body>
+    <h1>يلا اقعد زاكر كويس</h1>
+    <p>انا عارف  انك تعبت  و اي يعني فوق يااهبل يا ايها البطةالبلدي وزاكر</p>
+  <section class="pomodoro-timer">
+    <h2>Pomodoro Timer</h2>
+    <div id="timer">
+        <span id="minutes">25</span>:<span id="seconds">00</span>
+    </div>
+    <button id="startButton">ابدأ</button>
+    <button id="resetButton">إعادة ضبط</button>
+    <button id="pauseButton">إيقاف مؤقت</button>
+    <button id="newSessionButton">جلسة جديدة</button>
+    <label for="studySubject">المادة:</label>
+<select id="studySubject">
+    <option value="">اختر المادة</option>
+</select>
+<p>
+    جلسات اليوم:
+    <span id="sessionsCount">0</span>
+</p>
+  </section>
+  <div class="pomodoro-settings">
+
+    <h2>⚙️ إعدادات المؤقت</h2>
+
+    <label for="studyTime">⏱️ وقت المذاكرة</label>
+    <input type="number" id="studyTime" value="25" min="1">
+
+    <label for="shortBreak">☕ وقت الراحة</label>
+    <input type="number" id="shortBreak" value="5" min="1">
+
+    <label for="sessionCount">🔄 عدد الدورات</label>
+    <input type="number" id="sessionCount" value="4" min="1">
+
+    <label for="longBreak">🛋️ الراحة الطويلة</label>
+    <input type="number" id="longBreak" value="60" min="1">
+
+    <button id="saveSettings">
+        💾 حفظ الإعدادات
+    </button>
+
+</div>
+  <nav class="sidebar" aria-label="التنقل الرئيسي">
+        <h2>StudyMate</h2>
+     
+     <a href="index.html">🏠 الرئيسية</a>
+        <a href="pomodoro.html">⏱️ Pomodoro</a>
+        <a href="subjects.html">📚 المواد</a>
+        <a href="planner.html">📅 Planner</a>
+        <a href="daily-planner.html" aria-current="page">🗓️ جدول اليوم</a>
+        <a href="lessons.html">📖 دروس اليوم</a>
+        <a href="goals.html">🎯 الأهداف الأسبوعية</a>
+        <a href="notes.html">📝 الملاحظات</a>
+        <a href="exams.html">📝 الامتحانات</a>
+        <a href="profile.html">👤 الملف الشخصي</a>
+    </nav>
+<script src="script.js"></script>
+</body>
+</html>

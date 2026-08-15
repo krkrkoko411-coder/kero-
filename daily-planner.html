@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جدول المذاكرة اليومي - KiroHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+</head>
+<body>
+    <button id="sidebarToggle" type="button" aria-label="إغلاق القائمة" aria-expanded="true"></button>
+  <nav class="sidebar" aria-label="التنقل الرئيسي">
+        <h2>StudyMate</h2>
+     
+     <a href="index.html">🏠 الرئيسية</a>
+        <a href="pomodoro.html">⏱️ Pomodoro</a>
+        <a href="subjects.html">📚 المواد</a>
+        <a href="planner.html">📅 Planner</a>
+        <a href="daily-planner.html" aria-current="page">🗓️ جدول اليوم</a>
+        <a href="lessons.html">📖 دروس اليوم</a>
+        <a href="goals.html">🎯 الأهداف الأسبوعية</a>
+        <a href="notes.html">📝 الملاحظات</a>
+        <a href="exams.html">📝 الامتحانات</a>
+        <a href="profile.html">👤 الملف الشخصي</a>
+    </nav>
+    <main>
+        <section class="daily-planner">
+            <h1>🗓️ جدول المذاكرة اليومي</h1>
+            <p>نظم وقتك قعدت تقول مش عارف انظم وقتي و بنسي مواعيدي يلا  يلا وبطل استعباط وخش زاكر</p>
+
+            <div class="today-date">
+                <h2>📅 اليوم</h2>
+                <p id="todayDate">12 أغسطس 2026</p>
+            </div>
+
+            <div class="add-task">
+                <h2>➕ إضافة مهمة</h2>
+                <input type="text" id="taskName" placeholder="اكتب المهمة">
+                <select id="taskSubject">
+                    <option value="">اختر المادة</option>
+                    <option value="physics">⚡ Physics</option>
+                    <option value="math">📐 Mathematics</option>
+                    <option value="english">🇬🇧 English</option>
+                    <option value="arabic">📖 Arabic</option>
+                </select>
+                <input type="time" id="taskTime">
+                <input type="number" id="taskDuration" min="1" placeholder="المدة بالدقائق">
+                <button id="addTaskButton" type="button">➕ إضافة المهمة</button>
+            </div>
+
+            <div class="today-tasks">
+                <h2>📚 مهام اليوم</h2>
+                <div id="todayTasks">
+                    <div class="empty-state">
+                        <p>مفيش مهام لليوم</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="daily-progress">
+                <h2>📊 إنجاز اليوم</h2>
+                <p>أنجزت <span id="completedTasks">0</span> من <span id="totalTasks">0</span> مهام</p>
+                <div class="progress-bar"><div id="dailyProgress" class="progress-fill"></div></div>
+                <p>نسبة الإنجاز: <span id="dailyPercentage">0%</span></p>
+            </div>
+            <input type="hidden" id="taskName">
+            <input type="hidden" id="taskSubject">
+            <input type="hidden" id="taskTime">
+            <input type="hidden" id="taskDuration">
+        </section>
+    </main>
+
+<script src="script.js"></script>
+</body>
+</html>
