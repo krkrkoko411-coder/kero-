@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="planner">
+
+    <h1>📅 مخطط المذاكرة</h1>
+
+    <p>نظم وقتك وحدد المهام اللي عايز تخلصها.</p>
+
+    <div class="today">
+        <h2>📌 مهام اليوم</h2>
+
+        <ul id="todayTasks">
+            <li>
+                <p>مفيش مهام لليوم</p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="add-task">
+        <h2>➕ إضافة مهمة</h2>
+
+        <input type="text" id="taskInput" placeholder="اكتب المهمة">
+
+        <button id="addTaskButton">إضافة</button>
+    </div>
+
+</section>
+<nav class="sidebar" aria-label="التنقل الرئيسي">
+        <h2>StudyMate</h2>
+     
+     <a href="index.html">🏠 الرئيسية</a>
+        <a href="pomodoro.html">⏱️ Pomodoro</a>
+        <a href="subjects.html">📚 المواد</a>
+        <a href="planner.html">📅 Planner</a>
+        <a href="daily-planner.html" aria-current="page">🗓️ جدول اليوم</a>
+        <a href="lessons.html">📖 دروس اليوم</a>
+        <a href="goals.html">🎯 الأهداف الأسبوعية</a>
+        <a href="notes.html">📝 الملاحظات</a>
+        <a href="exams.html">📝 الامتحانات</a>
+        <a href="profile.html">👤 الملف الشخصي</a>
+    </nav>
+<script src="script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const input = document.getElementById("taskInput");
+    const button = document.getElementById("addTaskButton");
+    const list = document.getElementById("todayTasks");
+
+    if (!input || !button || !list) {
+        console.error("Planner elements not found");
+        return;
+    }
+
+    function loadTasks() {
+        try {
+            return JSON.parse(localStorage.getItem("kirohub_planner")) || [];
+        } catch (error) {
+            console.error("Planner storage error:", error);
+            return [];
+        }
+    }
+
+    function saveTasks(tasks) {
+        localStorage.setItem(
+            "kirohub_planner",
+            JSON.stringify(tasks)
+        );
+    }
+
+    function renderTasks() {
+
+        const tasks = loadTasks();
+
+        const today = new Date().toDateString();
+
+        const todayTasks = tasks.filter(task => {
+
+            if (!task.date) return false;
+
+            return new Date(task.date).toDateString() === today;
+        });
+
+        if (todayTasks.length === 0) {
+
+            list.innerHTML = `
+                <li>
+                    <p>مفيش مهام لليوم</p>
+                </li>
+            `;
+
+            return;
+        }
+
+        list.innerHTML = todayTasks.map(task => {
+
+            return `
+                <li>
+                    <input
+                        type="checkbox"
+                        ${task.completed ? "checked" : ""}
+                        data-task-id="${task.id}"
+                    >
+
+                    <label>
+                        ${task.name || ""}
+                    </label>
+                </li>
+            `;
+
+        }).join("");
+
+    }
+
+
+    button.addEventListener("click", function (event) {
+
+        event.preventDefault();
+
+        const name = input.value.trim();
+
+        if (!name) {
+            alert("اكتب المهمة الأول.");
+            input.focus();
+            return;
+        }
+
+        const tasks = loadTasks();
+
+        const newTask = {
+
+            id: Date.now(),
+
+            name: name,
+
+            subject: "عام",
+
+            time: new Date().toLocaleTimeString(
+                "ar-EG",
+                {
+                    hour: "2-digit",
+                    minute: "2-digit"
+                }
+            ),
+
+            duration: 30,
+
+            date: new Date().toISOString(),
+
+            completed: false,
+
+            createdAt: new Date().toISOString()
+
+        };
+
+
+        tasks.push(newTask);
+
+        saveTasks(tasks);
+
+        input.value = "";
+
+        renderTasks();
+
+        console.log("تمت إضافة المهمة:", newTask);
+
+    });
+
+
+    input.addEventListener("keydown", function (event) {
+
+        if (event.key === "Enter") {
+            event.preventDefault();
+            button.click();
+        }
+
+    });
+
+
+    renderTasks();
+
+});
+</script>
+</body>
